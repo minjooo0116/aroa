@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="memberMapper">
+
+    <resultMap type="com.spring.board.member.model.dto.MemberDto" id="member_rm">
+        <!-- DB의 기본 키(복합키면 여러 개 작성) -->
+        <id property="memberNo" column="MEMBER_NO" />
+
+        <!-- DB의 일반 컬럼들 -->
+        <result property="memberEmail" column="MEMBER_EMAIL" />
+        <result property="memberPw" column="MEMBER_PW" />
+    </resultMap>
+
+    <!-- 회원가입 -->
+    <insert id="signUp" parameterType="com.spring.board.member.model.dto.MemberDto">
+        INSERT INTO MEMBER (MEMBER_NO, MEMBER_EMAIL, MEMBER_PW)
+        VALUES(SEQ_MEMBER_NO.NEXTVAL, #{memberEmail}, #{memberPw})
+    </insert>
+</mapper>

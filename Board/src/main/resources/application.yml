@@ -1,0 +1,53 @@
+server:
+  port: 8080
+
+# Thymeleaf 설정
+thymeleaf:
+  encoding: UTF-8
+  cache: false
+  prefix: classpath:templates/
+  check-template-location: true
+  suffix: .html
+  mode: HTML
+
+devtools:
+  livereload:
+    enabled: true
+  remote:
+    restart:
+      enabled: true
+
+
+# Naver SMTP 서버 사용
+spring:
+  mail:
+    host: smtp.naver.com
+    port: 465
+    username: 99seed
+    password: dldnwls1!@
+    properties:
+      mail:
+        smtp:
+          starttls:
+            enable: true
+          auth: true
+          ssl:
+            enable: true
+
+  # 데이터베이스 연결 설정
+  datasource:
+    driver-class-name: oracle.jdbc.OracleDriver
+    url: jdbc:oracle:thin:@localhost:1521:xe
+    username: lmj
+    password: lmj1234
+
+  # MyBatis 설정
+  mybatis:
+    mapper-locations: classpath:/mappers/**/*.xml
+    configuration:
+      map-underscore-to-camel-case: true
+
+# Redis 설정
+redis:
+  host: 127.0.0.1
+  port: 6379

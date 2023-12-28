@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8"/>
+    <title>thymeleaf layout</title>
+    <meta name="viewport"
+          content="width=device-width, maximum-scale=1.0, minimum-scale=1, user-scalable=yes,initial-scale=1.0"/>
+
+    <link rel="stylesheet" th:href="@{/css/member/signup.css}">
+
+    <!-- content script -->
+    <th:block th:replace="~{fragments/config::configFragment}"></th:block>
+
+
+</head>
+<!--    <th:block layout:fragment="css"></th:block>-->
+
+
+<!-- content script -->
+<!--    <th:block layout:fragment="script"></th:block>-->
+<body>
+
+
+<th:block layout:fragment="content">
+
+    <div class="signup-main-container">
+
+    <div class="signup-title">회원 가입</div>
+        <hr>
+    <!-- 2023.12.26 회원가입 컨테이너 시작 -->
+        <form action="/signUp" method="POST" name="signUpFrm" id="signUpFrm">
+
+            <div class="member-ship">
+
+                <!-- 이메일 입력 -->
+                <div class="form-group">
+                    <label for="email">이메일</label>
+                    <div class="email-input-area">
+                        <input type="email" id="email" name="email" placeholder="email@gmail.com">
+                        <button id="send-email-btn" type="button">인증 번호 받기</button>
+                    </div>
+                </div>
+                <!-- 인증번호 받을 이메일 작성란 -->
+                <p class="email-check" id="email-check">인증번호를 받을 이메일을 작성해주세요.</p>
+
+                <div class="auth-input-area">
+                    <input type="text" name="pwAuthenticationKey" id="email-auth-key" placeholder="인증 번호 입력" maxlength="6" autocomplete="off">
+                    <button id="email-auth-btn" type="button">인증하기</button>
+                </div>
+
+                <!-- 비밀번호 입력 -->
+                <div class="form-group">
+                    <label for="password">비밀번호</label>
+                    <div class="pass-area">
+                        <input type="password" id="password" name="password" placeholder="특수문자, 숫자, 대문자 포함 8자리 이상" required/>
+                        <button id="pass-btn" type="button">비밀번호 확인</button>
+                    </div>
+                </div>
+
+                <br>
+                <!-- Submit 버튼 -->
+                <button type="submit" class="signup-button">가입하기</button>
+            </div>
+        </form>
+    </div>
+    <!-- 2023.12.26 회원가입 컨테이너 끝 -->
+
+    <script th:src="@{/js/member/signup.js}"></script>
+</th:block>
+
+
+</body>
+</html>

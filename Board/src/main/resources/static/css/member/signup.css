@@ -1,0 +1,84 @@
+* {
+    box-sizing: border-box;
+}
+.signup-main-container{
+    max-width: 800px;
+    margin: auto;
+}
+.signup-title {
+    font-size: 24px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    /*border-radius: 4px;*/
+}
+.email-input-area{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#send-email-btn{
+    width: 50%;
+    font-size: 1rem;
+    margin-left: 10px;
+    padding: 6px;
+    /*border-radius: 4px;*/
+}
+.signup-button {
+    padding: 10px 15px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.signup-button:hover {
+    background-color: #45a049;
+}
+
+.email-check{
+    color: #b3b3b3;
+    font-size: 13px;
+}
+hr {
+    border: 1px solid #ddd;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.auth-input-area{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#email-auth-btn{
+    width: 50%;
+    font-size: 1rem;
+    margin-left: 10px;
+    padding: 6px;
+}
+.pass-area{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#pass-btn{
+    width: 50%;
+    font-size: 1rem;
+    margin-left: 10px;
+    padding: 6px;
+}

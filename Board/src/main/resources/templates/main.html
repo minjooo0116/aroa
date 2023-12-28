@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8"/>
+    <title>thymeleaf layout</title>
+    <meta name="viewport"
+          content="width=device-width, maximum-scale=1.0, minimum-scale=1, user-scalable=yes,initial-scale=1.0"/>
+
+    <link rel="stylesheet" th:href="@{/css/main.css}">
+
+    <!-- content script -->
+    <th:block th:replace="~{fragments/config::configFragment}"></th:block>
+
+
+</head>
+<!--    <th:block layout:fragment="css"></th:block>-->
+
+
+<!-- content script -->
+<!--    <th:block layout:fragment="script"></th:block>-->
+<body>
+
+    <th:block layout:fragment="content">
+        여기에 내용.
+        <!-- 2023.12.26 메인페이지 컨테이너 시작-->
+        <div class="main-container">
+
+            <!-- 2023.12.26 메인페이지 미니 컨테이너 시작-->
+            <div class="main-mini-container">
+
+                <!-- 2023.12.26 메인페이지 제목 영역 컨테이너 -->
+                <div class="main-title">
+                    <div>홈페이지</div>
+                    <img th:src="@{/images/timo.jpeg}" class="logo-image">
+                </div>
+                <!-- 2023.12.26 메인페이지 제목 영역 컨테이너 끝 -->
+                <br>
+                <hr>
+                <br>
+
+                <!-- 2023.12.26 회원가입 컨테이너 시작 -->
+                <div class="signup-container">
+                    <!-- 로그인 버튼 -->
+                    <button onclick="location.href='/login'" class="login-button">로그인</button>
+
+                    <!-- 회원가입 버튼 -->
+                    <button onclick="location.href='/signUp'" class="signup-button">회원가입</button>
+                </div>
+                <!-- 2023.12.26 회원가입 컨테이너 끝 -->
+
+            </div>
+            <!-- 2023.12.26 메인페이지 미니 컨테이너 끝-->
+
+
+        </div>
+        <!-- 2023.12.26 메인페이지 컨테이너 끝-->
+
+
+<!--        <div th:if="${message}" class="alert alert-info" id="flashMessage">-->
+<!--            <p th:text="${message}"></p>-->
+<!--        </div>-->
+    </th:block>
+
+
+</body>
+</html>
